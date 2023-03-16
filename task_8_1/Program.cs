@@ -19,14 +19,14 @@ int Prompt(string message)
     return num_result;
 }
 
-int[,] GetArray(int m, int n, int minValue, int maxValue)
+int[,] GetArray(int m, int n)
 {
     int[,] result = new int[m, n];
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            result[i, j] = new Random().Next(minValue, maxValue + 1);
+            result[i, j] = new Random().Next(10);
         }
     }
     return result;
@@ -67,7 +67,7 @@ int[,] SortArray(int[,] array)
 
 int m = Prompt("Введите размер массива по строкам: ");
 int n = Prompt("Введите размер массива по столбцам: ");
-int[,] array = GetArray(m, n, 0, 9);
+int[,] array = GetArray(m, n);
 
 PrintArray(array);
 WriteLine();
