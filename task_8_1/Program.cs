@@ -14,8 +14,8 @@ Clear();
 
 int Prompt(string message)
 {
-    Console.Write(message);
-    int num_result = int.Parse(Console.ReadLine()!);
+    Write(message);
+    int num_result = int.Parse(ReadLine()!);
     return num_result;
 }
 
@@ -65,6 +65,17 @@ int[,] SortArray(int[,] array)
     return array;
 }
 
+
+using System;
+using static System.Console;
+Clear();
+
+int Prompt(string message)
+{
+    Console.Write(message);
+    int num_result = int.Parse(Console.ReadLine()!);
+    return num_result;
+}
 int m = Prompt("Введите размер массива по строкам: ");
 int n = Prompt("Введите размер массива по столбцам: ");
 int[,] array = GetArray(m, n);

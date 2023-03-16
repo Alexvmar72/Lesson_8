@@ -22,8 +22,8 @@ Clear();
 
 int Prompt(string message)
 {
-    Console.Write(message);
-    int num_result = int.Parse(Console.ReadLine()!);
+    Write(message);
+    int num_result = int.Parse(ReadLine()!);
     return num_result;
 }
 

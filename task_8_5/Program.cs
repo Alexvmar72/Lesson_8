@@ -11,8 +11,8 @@ Clear();
 
 int Prompt(string message)
 {
-    Console.Write(message);
-    int num_result = int.Parse(Console.ReadLine()!);
+    Write(message);
+    int num_result = int.Parse(ReadLine()!);
     return num_result;
 }
 
@@ -29,6 +29,7 @@ int[,] GetArray(int m, int n)
     while (index < result.GetLength(0) * result.GetLength(1))
     {
 
+        //ползём сверху вправо
         for (j = b; j < n; j++)
         {
 
@@ -37,18 +38,23 @@ int[,] GetArray(int m, int n)
             index++;
         }
 
+        //падаем вниз справа
         for (i = a + 1, j--; i < m; i++)
         {
             result[i, j] = x;
             x++;
             index++;
         }
+
+        //идём внизу влево
         for (j = n - 2, i--; j >= b; j--)
         {
             result[i, j] = x;
             x++;
             index++;
         }
+
+        //карабкаемся вверх слева
         for (i = m - 2, j++; i > a; i--)
         {
             result[i, j] = x;
@@ -64,7 +70,6 @@ int[,] GetArray(int m, int n)
         index++;
     }
 
-
     return result;
 }
 
@@ -74,7 +79,7 @@ void PrintArray(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Write($"{array[i, j]}");
+            Write($"{array[i, j]} ");
         }
         WriteLine();
     }
