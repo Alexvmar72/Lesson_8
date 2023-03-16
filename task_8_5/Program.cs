@@ -74,7 +74,7 @@ void PrintArray(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Write($"{array[i, j]}", 4);
+            Write($"{array[i, j]}");
         }
         WriteLine();
     }
